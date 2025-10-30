@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Real-time recsys: rankers + agents"
+title: Real-time recsys: rankers + agents
 permalink: /blog/recsys-agents/
 ---
 
