@@ -1,0 +1,12 @@
+title: 'Rimon Rony'
+description: "Notes on AI/ML systems, practice, and experiments."
+baseurl: ""
+url: ""
+
+style: dark
+
+footer: 'rimonrony@[figure-it-out]'
+
+# Build settings
+markdown: kramdown
+remote_theme: b2a3e8/jekyll-theme-console

@@ -1,0 +1,101 @@
+
+@import "jekyll-theme-console";
+
+:root{
+  --bg:#08141e;
+  --bg2:#08131c;
+  --ink:#c3a194;
+  --muted:#87696f;
+  --slate:#2e323c;
+}
+
+html,
+body{
+  height:100%;
+}
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"VT323", monospace;
+  font-size:18px;
+  letter-spacing:0.2px;
+  margin:0;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+a{
+  color:var(--muted);
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+hr{
+  border:0;
+  border-top:1px solid var(--slate);
+  opacity:.4;
+  margin:.4em 0;
+}
+
+h1,
+h2,
+h3{
+  margin:.35em 0 .25em;
+  line-height:1.05;
+}
+
+p{
+  margin:.25em 0;
+}
+
+ul,
+ol{
+  margin:.25em 0 .25em 1.2em;
+  padding:0;
+}
+
+li{
+  margin:.15em 0;
+}
+
+.wrapper,
+.container,
+main{
+  max-width:860px;
+  margin:28px auto 60px;
+  padding:0 16px;
+  line-height:1.1;
+}
+
+#a{
+  color:var(--muted);
+}
+
+#b{
+  color:var(--slate);
+}
+
+#c{
+  color:var(--ink);
+}
+
+#k{
+  color:var(--muted);
+  animation:blink 1s steps(2,start) infinite;
+}
+
+@keyframes blink{
+  0%,
+  50%{
+    opacity:1;
+  }
+
+  51%,
+  100%{
+    opacity:.55;
+  }
+}
