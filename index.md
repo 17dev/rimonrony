@@ -4,5 +4,5 @@ title: Projects
 ---
 
 - **Recsys** — in-session cross-sell recommender for consultants.
-- **TS** — ts prediction &  what-ifs.
+- **TS** — Time-series with Kalman Filters, N4SID, state-space models and (FFT) Fast Fourier Transform.
 - **OkEngine** — ranking & personalisation.
