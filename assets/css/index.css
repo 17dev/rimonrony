@@ -1,57 +1,88 @@
-:root {
-  /* SCRIPT-8 inspired palette */
+:root{
+  /* SCRIPT-8 palette */
   --bg: #08141e;
-  --bg2: #08131c;
-  --ink: #c3a194;
-  --muted: #87696f;
-  --slate: #2e323c;
+  --bg2:#08131c;
+  --ink:#c3a194;   /* primary text */
+  --muted:#87696f; /* links / subtle accents */
+  --slate:#2e323c; /* secondary text / rules */
 }
 
-body {
-  background-color: var(--bg);
-  color: var(--ink);
-  margin: 0;
-  font-family: "VT323", monospace;
-  font-size: 18px;          /* slightly smaller for compactness */
-  letter-spacing: 0.2px;
+/* Base */
+html,body{ height:100%; }
+body{
+  background:var(--bg);
+  color:var(--ink);
+  margin:0;
+  font-family:"VT323", monospace;     /* pixel mono */
+  font-size:18px;                     /* compact baseline */
+  letter-spacing:0.2px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-#console {
-  max-width: 820px;
-  padding: 0 16px;
-  margin: 40px auto;        /* reduce top/bottom space */
-  line-height: 1.1;         /* much tighter line spacing */
-  letter-spacing: 0.2px;
+/* Top nav (SCRIPT-8 bar) */
+.topnav{
+  position:sticky; top:0; z-index:10;
+  display:flex; gap:18px; align-items:center;
+  padding:6px 12px;
+  background:var(--bg2);
+  border-bottom:1px solid #0d1b27;
+}
+.topnav a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:3px 6px;
+}
+.topnav a:hover{ text-decoration:underline; }
+.topnav .brand{
+  color:var(--ink);
+  letter-spacing:1px;
+  margin-right:8px;
 }
 
-p {
-  margin: 0.2em 0;          /* minimal paragraph gap */
+/* Typing console */
+#console{
+  max-width:860px;
+  padding:0 16px;
+  margin:28px auto 60px;
+  line-height:1.1;                 /* tight like the reference */
 }
 
-/* Links */
-a {
-  color: var(--muted);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+/* Links inside console */
+a{ color:var(--muted); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+/* Prompt colours */
+#a{ color:var(--muted); }
+#b{ color:var(--slate); }
+#c{ color:var(--ink); }
+#op{ color:var(--slate); }
+
+/* Headings (compact, uppercase feel) */
+h1,h2,h3{ margin:0.35em 0 0.25em; line-height:1.05; }
+h1{ font-size:28px; letter-spacing:1px; }
+h2{ font-size:22px; letter-spacing:0.6px; }
+h3{ font-size:19px; letter-spacing:0.4px; }
+
+/* Paragraphs and lists: very small gaps like SCRIPT-8 */
+p{ margin:0.25em 0; }
+ul,ol{ margin:0.25em 0 0.25em 1.2em; padding:0; }
+li{ margin:0.15em 0; }
+
+/* Small rules for section separation (no tall gaps) */
+hr{
+  border:0; border-top:1px solid var(--slate);
+  margin:0.4em 0;
+  opacity:.4;
 }
 
-/* Terminal prompt colours */
-#a { color: var(--muted); }
-#b { color: var(--slate); }
-#c { color: var(--ink); }
+/* Emphasis */
+strong{ color:var(--ink); }
+em{ color:var(--muted); }
 
-/* Optional muted text */
-#op { color: var(--slate); }
-
-/* Blinking caret or 'Hey.' */
-#k {
-  color: var(--muted);
-  animation: blink 1s steps(2, start) infinite;
+/* Blinking highlight (used for “Hey.”) */
+#k{
+  color:var(--muted);
+  animation:blink 1s steps(2,start) infinite;
 }
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0.55; }
-}
+@keyframes blink{ 0%,50%{opacity:1;} 51%,100%{opacity:.55;} }
