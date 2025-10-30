@@ -1,27 +1,31 @@
 :root {
-  /* SCRIPT-8 inspired colour palette */
-  --bg: #08141e;        /* deep blue-black background */
-  --bg2: #08131c;       /* alternate dark tone */
-  --ink: #c3a194;       /* warm sand text */
-  --muted: #87696f;     /* dusty mauve accent */
-  --slate: #2e323c;     /* cool blue-grey */
+  /* SCRIPT-8 inspired palette */
+  --bg: #08141e;
+  --bg2: #08131c;
+  --ink: #c3a194;
+  --muted: #87696f;
+  --slate: #2e323c;
 }
 
 body {
   background-color: var(--bg);
   color: var(--ink);
   margin: 0;
-  font-family: "VT323", monospace;  /* retro pixel mono font */
-  font-size: 20px;
-  letter-spacing: 0.4px;
+  font-family: "VT323", monospace;
+  font-size: 18px;          /* slightly smaller for compactness */
+  letter-spacing: 0.2px;
 }
 
 #console {
   max-width: 820px;
   padding: 0 16px;
-  margin: 60px auto;
-  line-height: 1.25;  /* tighter spacing */
-  letter-spacing: 0.4px;
+  margin: 40px auto;        /* reduce top/bottom space */
+  line-height: 1.1;         /* much tighter line spacing */
+  letter-spacing: 0.2px;
+}
+
+p {
+  margin: 0.2em 0;          /* minimal paragraph gap */
 }
 
 /* Links */
@@ -34,33 +38,19 @@ a:hover {
 }
 
 /* Terminal prompt colours */
-#a {
-  color: var(--muted);
-}
-#b {
-  color: var(--slate);
-}
-#c {
-  color: var(--ink);
-}
+#a { color: var(--muted); }
+#b { color: var(--slate); }
+#c { color: var(--ink); }
 
 /* Optional muted text */
-#op {
-  color: var(--slate);
-}
+#op { color: var(--slate); }
 
-/* Blinking caret or "Hey." */
+/* Blinking caret or 'Hey.' */
 #k {
   color: var(--muted);
   animation: blink 1s steps(2, start) infinite;
 }
 
-/* Reduce paragraph spacing */
-p {
-  margin: 0.4em 0;
-}
-
-/* Caret blink animation */
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0.55; }
