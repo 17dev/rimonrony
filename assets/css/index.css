@@ -1,52 +1,48 @@
-:root {
-  --bg: #0b0d16;
-  --text: #e0c6ad;
-  --accent: #b39fc4;
-  --accent2: #d6a68c;
-  --link: #7ab8cc;
+:root{
+  /* extracted from your screenshot */
+  --bg: #08141e;        /* deep blue-black */
+  --bg2:#08131c;        /* alt dark */
+  --ink:#c3a194;        /* warm sand text */
+  --muted:#87696f;      /* dusty mauve */
+  --slate:#2e323c;      /* blue-grey slate */
 }
 
-body {
+body{
   background-color: var(--bg);
-  color: var(--text);
+  color: var(--ink);
   margin: 0;
-  font-family: "Courier New", monospace;
+  font-family: "VT323", monospace;  /* pixel mono */
+  font-size: 20px;                  /* larger x-height like the ref */
+  letter-spacing: 0.5px;
 }
 
-#console {
+#console{
   max-width: 820px;
   padding: 0 16px;
-  margin: 100px auto;
-  font-size: 15px;
-  line-height: 1.6;
+  margin: 80px auto;
+  line-height: 1.5;
 }
 
-a {
-  color: var(--link);
+a{
+  color: var(--muted);
   text-decoration: none;
 }
-a:hover {
-  text-decoration: underline;
-}
+a:hover{ text-decoration: underline; }
 
-#a {
-  color: var(--accent2);
-}
-#b {
-  color: var(--accent);
-}
-#c {
-  color: var(--link);
-}
-#op {
-  color: #888;
-}
-#k {
-  animation: blink 1s infinite;
-  color: var(--accent2);
-}
+/* prompt colours */
+#a{ color: var(--muted); }
+#b{ color: var(--slate); }
+#c{ color: var(--ink); }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0.5; }
+/* subtle op text (if you use it) */
+#op{ color: #2e323c; }
+
+/* blinking “Hey.” */
+#k{
+  color: var(--muted);
+  animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink{
+  0%,50%{ opacity: 1; }
+  51%,100%{ opacity: .55; }
 }
